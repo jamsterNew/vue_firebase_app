@@ -12,6 +12,8 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "noImplicitAny": false,
+    "plugins": [{ "name": "ts-vue-plugin" }],
     "types": [
       "webpack-env",
       "mocha",

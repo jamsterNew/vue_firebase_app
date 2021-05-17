@@ -1,32 +1,31 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="container">
+      <NavBar/>
+      <router-view/>
+      <!-- <Footer/> -->
     </div>
-    <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
 
-#nav {
-  padding: 30px;
+import { Component, Vue } from 'vue-property-decorator'
+import NavBar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+@Component({
+  components: {
+    NavBar,
+    Footer
   }
-}
+})
+export default class Home extends Vue {}
+</script>
+
+<style lang="scss">
+  .padding-lr-0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
 </style>
